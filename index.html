@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Monsters of Hyrule</h1>
+    </header>
+    <main>
+        <form class="monster__search" onsubmit="searchMonsters(document.getElementById('monster__search--input').value); return false;">
+            <input type="text" id="monster__search--input" placeholder="Search for a monster..."
+                onchange="searchMonsters(this.value)">
+            <button  type="submit" id="monster__search--button">Search</button>
+            <button id="monster__search--reset" onclick="resetMonsters()" type="button">Reset</button>
+        </form>
+        <div class="monster__filter">
+            <p>Filter</p>
+            <button class="monster__filter--button" id="filter__a-to-z" onclick="sortMonsters('a-to-z')" type="button">A to Z</button>
+            <button class="monster__filter--button" id="filter__z-to-a" onclick="sortMonsters('z-to-a')" type="button">Z to A</button>
+        </div>
+        <section class="monster__list">
+            <!-- Monsters will be dynamically added here -->
+        </section>
+    </main>
+</body>
+</html>
