@@ -15,10 +15,11 @@ async function fetchMonsters() {
     }
 }
 
-function searchMonsters(query) {
-    const monsters = JSON.parse(sessionStorage.getItem('monsters') || '[]');
-    if (query.length < 3) return;
-    const results = monsters.filter((monster) => monster.name.toLowerCase().includes(query.toLowerCase()));
+async function searchMonsters(query) {
+
+    const response = await fetch(`https://api.hyrule-compendium.com/v3/compendium/entry/${query}`);
+    const data = await response.json();
+    const results = data.data ? [data.data] : [];
 
     sessionStorage.setItem('monsters', JSON.stringify(results));
 

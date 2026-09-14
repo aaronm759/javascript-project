@@ -13,8 +13,7 @@
     </header>
     <main>
         <form class="monster__search" onsubmit="searchMonsters(document.getElementById('monster__search--input').value); return false;">
-            <input type="text" id="monster__search--input" placeholder="Search for a monster..."
-                onchange="searchMonsters(this.value)">
+            <input type="text" id="monster__search--input" placeholder="Search for a monster...">
             <button  type="submit" id="monster__search--button">Search</button>
             <button id="monster__search--reset" onclick="resetMonsters()" type="button">Reset</button>
         </form>
